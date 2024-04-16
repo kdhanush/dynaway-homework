@@ -14,6 +14,12 @@ export class HomePage {
 
   ionViewWillEnter(): void {
     this.assets = []
-    this.assetService.getAll().subscribe(assets => this.assets = assets)
+    this.assetService.getAll().subscribe(response => {
+      if (response.ok) {
+        this.assets = response?.data;
+      } else {
+        console.log('error')
+      }
+    });
   }
 }

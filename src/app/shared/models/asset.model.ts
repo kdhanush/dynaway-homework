@@ -6,3 +6,8 @@ export interface Asset {
   locationName: string
   image?: string
 }
+
+export interface IResponseData {
+  ok: boolean,
+  data: Asset[]
+}
